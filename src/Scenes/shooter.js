@@ -34,7 +34,7 @@ class shooter extends Phaser.Scene {
         this.enemyVisibleCount = 1; // ^^
         this.enemySpawned = 0;  //Keep track of during round variables
         this.enemyAlive = 0;    // ^^
-        this.maxEnemyVisibleCount = 10;     //Variables for Arrays
+        this.maxEnemyVisibleCount = 15;     //Variables for Arrays
         this.maxEnemyCannonBallCount = 50;  // ^^
         this.bigEnemyShipCount = 0;
         this.bigEnemyShipSpawned = 0;
@@ -86,7 +86,7 @@ class shooter extends Phaser.Scene {
             if (my.sprite.enemysLeftText) {
                 my.sprite.enemysLeftText.destroy(true);
             }
-            my.sprite.enemysLeftText = scenevar.add.text(scenevar.screenWidth-400,25,"Enemies Left: "+((scenevar.enemyCount-scenevar.enemySpawned)+scenevar.enemyAlive+(scenevar.bigEnemyShipCount-scenevar.bigEnemyShipSpawned)),{
+            my.sprite.enemysLeftText = scenevar.add.text(scenevar.screenWidth-425,25,"Enemies Left: "+((scenevar.enemyCount-scenevar.enemySpawned)+scenevar.enemyAlive+(scenevar.bigEnemyShipCount-scenevar.bigEnemyShipSpawned)),{
             color: "Crimson",
             fontSize: '40px',
             strokeThickness: 0.3,
@@ -101,7 +101,7 @@ class shooter extends Phaser.Scene {
             if (my.sprite.playerScore) {
                 my.sprite.playerScore.destroy(true);
             }
-            my.sprite.playerScore = scenevar.add.text(scenevar.screenWidth-250,75,"Score: "+this.playerScore,{
+            my.sprite.playerScore = scenevar.add.text(scenevar.screenWidth-300,75,"Score: "+this.playerScore,{
             color: "Gold",
             fontSize: '40px',
             strokeThickness: 0.3,
@@ -350,7 +350,7 @@ class shooter extends Phaser.Scene {
 
         
 
-
+        document.getElementById('description').innerHTML = '<h2>PirateGame.js</h2><br>Movement: A & D <br>Shoot: Space <br>Upgrades: 1, 2, 3';
     }
 
 
@@ -742,7 +742,7 @@ class shooter extends Phaser.Scene {
             }  
             //Fire Rate Increase
             else if (this.key2.isDown){
-                this.cannonCooldown -= 2;
+                this.cannonCooldown -= 3;
                 this.upgradeToggle = false;
                 this.destroyUpgradeText();
             }
