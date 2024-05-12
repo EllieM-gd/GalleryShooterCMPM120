@@ -143,7 +143,7 @@ class shooter extends Phaser.Scene {
         this.key3 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.THREE);
 
         //Change player speed
-        this.playerSpeed = 14;
+        this.playerSpeed = 8;
         this.ballSpeed = 3.3;
 
         //Random X Function for enemy - NEEDS ADJUSTING
@@ -747,7 +747,7 @@ class shooter extends Phaser.Scene {
                 this.destroyUpgradeText();
             }
             else if (this.key3.isDown){
-                this.playerSpeed += 1;
+                this.playerSpeed += 2;
                 this.upgradeToggle = false;
                 this.destroyUpgradeText();
             }
